@@ -1,0 +1,26 @@
+@import "../../../../styles.scss";
+
+.header-nav {
+    padding: 1.5rem;
+    background-color: $theme1;
+    color: $theme4;
+    font-weight: bold;
+    border-bottom: 1px solid $theme5;
+
+    .nav {
+        text-decoration: none;
+        cursor: pointer;
+        padding:0rem 0.5rem;
+        &.home {
+            font-size: 1.5rem;
+        }
+
+        &.nav-item {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            border-right: 1px solid $theme2;
+        }
+    }
+}
