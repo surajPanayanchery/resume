@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-$theme1: #e5fcc2;
-$theme2: #9de0ad;
-$theme3: #45ada8;
-$theme4: #547980;
-$theme5: #594f4f;
+$white: white;
+$black: black;
+$lighter: rgb(245, 238, 218);
+$light:#e8debb;
+$warm: rgb(207, 185, 110);
+$dark: rgb(177, 122, 51);
+$darker: rgb(102, 61, 8);
 
 * {
     margin: 0;
@@ -13,7 +15,8 @@ $theme5: #594f4f;
 
 body {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    background-color: $theme1;
+    background-color: $lighter;
+    z-index:1;
 }
 
 .d-flex {
@@ -24,7 +27,10 @@ body {
     &.align-items-center {
         align-items: center;
     }
+    &.vertical{
+        flex-direction: column;;
+    }
 }
 .ml-auto {
-    margin-left: auto;
+    margin-left: auto !important;
 }

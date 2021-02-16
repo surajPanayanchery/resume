@@ -1,26 +1,69 @@
 @import "../../../../styles.scss";
 
 .header-nav {
-    padding: 1.5rem;
-    background-color: $theme1;
-    color: $theme4;
+    padding: 0.8rem 0.8rem;
     font-weight: bold;
-    border-bottom: 1px solid $theme5;
+    margin-bottom: 0.5rem;
 
     .nav {
         text-decoration: none;
+        color: $dark;
         cursor: pointer;
-        padding:0rem 0.5rem;
+        padding: 0rem 0.5rem;        
+        border-radius: 1rem;
+        margin: 0rem 0.2rem;
+
+        &:hover {
+            background-color: $light;
+           
+        }
+        &.active {            
+            background-color: $light;
+        }
+
         &.home {
+            border:none;
+            padding: 0rem 0.8rem;
             font-size: 1.5rem;
         }
 
         &.nav-item {
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
             font-size: 1.2rem;
-        }
-
-        &:hover {
-            border-right: 1px solid $theme2;
+            position: relative;
+            .sub-section {
+                display:none;
+                width: fit-content;
+                background-color: $lighter;
+                border:2px solid $warm;
+                border-radius: 0.5rem;
+                white-space: nowrap;
+                position: absolute;
+                left: 1rem;                
+                top: 2.2rem;                
+                z-index: 100;
+                padding: 0rem 0.5rem;
+                .sub-item {
+                    padding: 0.5rem 0.2rem;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $dark;
+                    }
+                    &:hover{
+                        color:$darker;
+                    }
+                }
+            }
+            &:hover{
+                .sub-section{
+                    display:block;
+                }
+            }
         }
     }
+}
+
+fa-icon{    
+    font-size:0.8rem;    
+    margin:0.3rem;
 }
