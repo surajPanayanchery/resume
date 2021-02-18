@@ -1,0 +1,19 @@
+@import "../../../../styles.scss";
+
+fa-icon {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    color: $dark;
+}
+
+.footer-container {
+    padding: 1rem;
+    background-color: $light;
+    .icon-only {
+        font-size: 1.7rem !important;
+        padding: 0rem 0.5rem;
+        &:hover {
+            color: $darker;
+        }
+    }
+}

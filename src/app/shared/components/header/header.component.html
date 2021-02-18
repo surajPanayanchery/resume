@@ -1,17 +1,22 @@
-<div class="d-flex header-nav justify-content-center align-items-center">
-    <a class="home nav" routerLink="/">SP</a>
-    <a class="nav nav-item" routerLink="/">
-        <div class="d-flex align-items-center">
-            <fa-icon [icon]="projectsIcon"></fa-icon><span>Projects</span>
-        </div>
-        <div class="sub-section d-flex vertical justify-content-center">
-            <div class="sub-item" routerLink="projects/todolist">Todo List</div>
-            <div class="sub-item" routerLink="projects/counter">Counter</div>
-        </div>
-    </a>
-    <a class="nav nav-item ml-auto" routerLink="resume" routerLinkActive="active">
-        <div class="d-flex align-items-center">
-            <fa-icon [icon]="userIcon"></fa-icon><span>Profile</span>
-        </div>
-    </a>
-</div>
+<div class="d-flex header-nav justify-between align-items-center wrap">
+    <div class="d-flex align-items-center wrap">
+        <a class="home nav" routerLink="/">SP</a>
+        <a class="nav nav-item" routerLink="/">
+            <div class="d-flex align-items-center">
+                <fa-icon [icon]="projectsIcon"></fa-icon><span>Projects</span>
+            </div>
+            <div class="sub-section d-flex vertical justify-content-center">
+                <div class="sub-item" routerLink="projects/todolist">Todo List</div>
+                <div class="sub-item" routerLink="projects/counter">Counter</div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a class="nav nav-item ml-auto" routerLink="resume" routerLinkActive="active">
+            <div class="d-flex align-items-center">
+                <fa-icon [icon]="userIcon"></fa-icon><span>Profile</span>
+            </div>
+        </a>
+    </div>
+
+

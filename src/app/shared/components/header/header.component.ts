@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faProjectDiagram, faTasks, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faTasks } from '@fortawesome/free-solid-svg-icons/faTasks';
 
 @Component({
   selector: 'app-header',
