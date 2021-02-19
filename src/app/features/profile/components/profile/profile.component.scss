@@ -1,0 +1,41 @@
+@import "../../../../../styles.scss";
+
+.content-wrapper {
+    .tag-line {
+        text-align: center;
+        font-size: 2.2rem;
+        color: $warm;
+        .navigate {
+            cursor: pointer;
+            font-size: 1rem;
+            &:hover {
+                color: $dark;
+            }
+        }
+    }
+    .profile-pic {
+        text-align: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+
+    .sub-heading {
+        font-size: 1.3rem;
+        text-decoration: underline;
+    }
+    .sub-content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 789px) {
+    .content-wrapper {
+        .tag-line {
+            order: 1;
+        }
+        .profile-pic {
+            order: 0;
+        }
+    }
+}

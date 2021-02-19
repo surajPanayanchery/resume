@@ -1,0 +1,25 @@
+@import "../../../../styles.scss";
+
+.nav-heading {
+    padding: 10px 20px;
+    .nav-icon {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        padding: 0.4rem 0.6rem;
+        color: $warm;
+        border: 2px solid $warm;
+        border-radius: 50%;
+
+        cursor: pointer;
+        &:hover {
+            color: $dark;
+            border-color: $warm;
+            background-color: $light;
+        }
+    }
+    .heading-value {
+        margin-bottom:0.2rem;
+        color: $dark;
+        font-size: 1.5rem;        
+    }
+}

@@ -11,6 +11,6 @@ import { COMPONENTS } from './components';
     RouterModule,
     FontAwesomeModule
   ],
-  exports: [...COMPONENTS]
+  exports: [...COMPONENTS,FontAwesomeModule]
 })
 export class SharedModule { }

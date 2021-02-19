@@ -1,0 +1,25 @@
+@import "../../../../styles.scss";
+.flip-card {
+    perspective: 1000px;
+    background-color: $warm;
+    .inner-card {
+        position: relative;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        .front-face {
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .back-face {
+            position: absolute;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+        }
+    }
+    &:hover {
+        .inner-card {
+            transform: rotateY(180deg);
+        }
+    }
+}

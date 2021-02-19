@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'resume', pathMatch: 'full' },
-  { path: 'resume', loadChildren: () => import('./features/profile').then(mod => mod.ProfileModule) }  
+  { path: '', redirectTo: 'profile', pathMatch: 'full' },
+  { path: 'profile', loadChildren: () => import('./features/profile').then(mod => mod.ProfileModule) }  
 ];
 
 @NgModule({

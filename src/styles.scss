@@ -11,6 +11,7 @@ $darker: rgb(102, 61, 8);
 * {
     margin: 0;
     padding: 0;
+    outline: none !important;
 }
 
 body {
@@ -24,8 +25,11 @@ body {
     &.justify-content-center {
         justify-content: center;
     }
-    &.justify-between{
+    &.justify-between {
         justify-content: space-between;
+    }
+    &.justify-around {
+        justify-content: space-around;
     }
     &.align-items-center {
         align-items: center;
@@ -33,7 +37,7 @@ body {
     &.vertical {
         flex-direction: column;
     }
-    &.wrap{
+    &.wrap {
         flex-wrap: wrap;
     }
 }
@@ -41,3 +45,27 @@ body {
     margin-left: auto !important;
 }
 
+.text-center{
+    text-align:center;
+}
+
+.scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+        display: block;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $warm;
+        border-radius: 10px;
+        &:hover {
+            background: $dark;
+        }
+    }
+}

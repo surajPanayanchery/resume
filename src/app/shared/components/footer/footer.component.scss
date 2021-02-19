@@ -9,10 +9,18 @@ fa-icon {
 .footer-container {
     padding: 1rem;
     background-color: $light;
-    .icon-only {
-        font-size: 1.7rem !important;
-        padding: 0rem 0.5rem;
-        &:hover {
+    .ext-icons {
+        padding-top: 0.3rem;
+        .icon-only {
+            font-size: 1.7rem !important;
+            padding: 0rem 0.5rem;
+            &:hover {
+                color: $darker;
+            }
+        }
+    }
+    .contact {
+        .text-value {
             color: $darker;
         }
     }
