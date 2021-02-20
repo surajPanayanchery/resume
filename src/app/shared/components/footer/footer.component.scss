@@ -25,3 +25,14 @@ fa-icon {
         }
     }
 }
+
+@media (max-width: 349px) {
+    .footer-container {
+        .contact {
+            margin-left: 0rem !important;
+            .mobile {
+                text-align: center;
+            }
+        }
+    }
+}

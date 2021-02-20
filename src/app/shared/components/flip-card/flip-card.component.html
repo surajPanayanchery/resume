@@ -1,12 +1,10 @@
 <div class="flip-card d-flex">
-    <div class="inner-card">
-        <div class="front-face">
-            <ng-content select="[cardFront]"></ng-content>
-        </div>
-        <div class="back-face">
-            <ng-content select="[cardBack]"></ng-content>
-        </div>
+  <div class="inner-card d-flex justify-content-center align-items-center">
+    <div class="front-face">
+      <ng-content select="[cardFront]"></ng-content>
     </div>
-
-
+    <div class="back-face">
+      <ng-content select="[cardBack]"></ng-content>
+    </div>
+  </div>
 </div>

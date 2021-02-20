@@ -54,8 +54,20 @@
                     }
                 }
             }
+            .arrow-down {
+                display: block;
+            }
+            .arrow-up {
+                display: none;
+            }
             &:hover {
                 .sub-section {
+                    display: block;
+                }
+                .arrow-down {
+                    display: none;
+                }
+                .arrow-up {
                     display: block;
                 }
             }

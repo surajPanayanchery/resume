@@ -1,22 +1,26 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { faArrowAltCircleLeft, faArrowLeft, faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'nav-heading',
   templateUrl: './nav-heading.component.html',
-  styleUrls: ['./nav-heading.component.scss']
+  styleUrls: ['./nav-heading.component.scss'],
 })
 export class NavHeadingComponent implements OnInit {
-  @Input() heading: string = "Heading";
+  @Input() heading: string = 'Heading';
   iconBack = faArrowLeft;
-  constructor(private location: Location) { }
+  @Input() route: string;
+  constructor(private location: Location, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   navigateBack() {
-    this.location.back();
+    if (this.route) {
+      this.router.navigate([this.route]);
+    } else {
+      this.location.back();
+    }
   }
-
 }

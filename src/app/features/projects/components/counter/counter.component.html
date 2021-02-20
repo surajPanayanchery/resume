@@ -1,0 +1,18 @@
+<nav-heading heading="Counter" route="/profile"></nav-heading>
+
+<div class="counter d-flex align-items-center justify-content-center vertical">
+  <div class="value d-flex align-items-center justify-content-center">
+    {{ count }}
+  </div>
+  <div class="controls d-flex">
+    <div (click)="add()" class="ctrl-icon">
+      <fa-icon [icon]="addIcon"></fa-icon>
+    </div>
+    <div (click)="minus()" class="ctrl-icon">
+      <fa-icon [icon]="minusIcon"></fa-icon>
+    </div>
+  </div>
+  <div (click)="reset()" class="ctrl-icon">
+    <fa-icon [icon]="resetIcon"></fa-icon>
+  </div>
+</div>

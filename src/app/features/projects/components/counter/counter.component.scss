@@ -1,0 +1,29 @@
+@import "../../../../../styles.scss";
+
+.counter {
+    .value {
+        width: 75px;
+        height: 75px;
+        font-size: 2rem;
+        padding: 2rem;
+        border: 3px solid $warm;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        color: $warm;
+        overflow-block: hidden;
+    }
+
+    .ctrl-icon {
+        cursor: pointer;
+        margin: 1rem;
+        color: $warm;
+        border: 2px solid $warm;
+        border-radius: 50%;
+        padding: 0.2rem 0.4rem;
+
+        &:hover {
+            color: $dark;
+            border-color: $dark;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 @import "../../../../styles.scss";
-.flip-card {
+.flip-card {    
     perspective: 1000px;
     background-color: $warm;
     .inner-card {
@@ -13,6 +13,7 @@
         }
         .back-face {
             position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
             backface-visibility: hidden;
             transform: rotateY(180deg);
         }
