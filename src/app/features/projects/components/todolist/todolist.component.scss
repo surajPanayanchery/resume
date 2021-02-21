@@ -1,0 +1,47 @@
+@import "../../../../../styles.scss";
+
+@mixin container {
+    min-width: 250px;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid $darker;
+}
+.todolist {
+    .todo-header {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: $warm;
+    }
+    .input-todo {
+        font-size: 1.5rem;
+        .text-input {
+            height: 25px;
+            border: 1px solid $light;
+            border-radius: 0.3rem;
+            color: $warm;
+        }
+    }
+
+    .control-icon {
+        color: $warm;
+        padding: 0.3rem;
+        &:hover {
+            color: $dark;
+        }
+    }
+    .todo {
+        @include container;
+    }
+    .completed {
+        @include container;
+        color: $warm;
+    }
+    .todo-item {
+        border: 1px solid $warm;
+        font-size: 1.1rem;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0rem;
+        color: $dark;
+    }
+}

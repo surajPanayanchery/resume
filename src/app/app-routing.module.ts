@@ -9,7 +9,7 @@ const routes: Routes = [
       import('./features/profile').then((mod) => mod.ProfileModule),
   },
   {
-    path: 'projects',
+    path: 'snippets',
     loadChildren: () =>
       import('./features/projects').then((mod) => mod.ProjectsModule),
   },

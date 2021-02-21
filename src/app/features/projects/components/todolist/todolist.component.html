@@ -1,1 +1,75 @@
-<p>todolist works!</p>
+<nav-heading heading="Todo List" route="/profile"></nav-heading>
+
+<div class="todolist d-flex justify-around align-items-center">
+  <div class="todo" droppable (dropped)="addToTodo($event)">
+    <div class="todo-header d-flex align-items-center justify-between">
+      <span>Todo</span>
+      <fa-icon
+        class="control-icon"
+        (click)="showInput = true"
+        [icon]="addIcon"
+      ></fa-icon>
+    </div>
+
+    <div class="input-todo d-flex align-items-center" *ngIf="showInput">
+      <input class="text-input" type="text" [(ngModel)]="todo" />
+      <fa-icon
+        class="control-icon"
+        (click)="showInput = false"
+        [icon]="removeIcon"
+      ></fa-icon>
+      <fa-icon
+        class="control-icon"
+        (click)="addTodo()"
+        [icon]="submitIcon"
+      ></fa-icon>
+    </div>
+
+    <div
+      class="todo-item d-flex justify-between"
+      draggable
+      [dragItem]="item"
+      *ngFor="let item of todolist; let i = index"
+    >
+      <div>{{ item }}</div>
+      <div>
+        <fa-icon
+          class="control-icon"
+          (click)="removeTodo(i)"
+          [icon]="removeIcon"
+        ></fa-icon>
+        <fa-icon
+          class="control-icon"
+          (click)="addToComplete(item)"
+          [icon]="rightIcon"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div class="completed" droppable (dropped)="addToComplete($event)">
+    <div class="todo-header">Completed</div>
+    <div *ngIf="completed?.length === 0">Drop Completed items here</div>
+    <div
+      class="todo-item d-flex justify-between"
+      draggable
+      [dragItem]="item"
+      *ngFor="let item of completed; let i = index"
+    >
+      <div>
+        <fa-icon
+          class="control-icon"
+          (click)="addToTodo(item)"
+          [icon]="leftIcon"
+        ></fa-icon
+        >{{ item }}
+      </div>
+      <div class="ml-auto">
+        <fa-icon
+          class="control-icon"
+          (click)="removeCompleted(i)"
+          [icon]="removeIcon"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
