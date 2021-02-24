@@ -10,7 +10,7 @@
     .todo-header {
         margin-bottom: 1rem;
         font-size: 1.5rem;
-        color: $warm;
+        color: $dark;
     }
     .input-todo {
         font-size: 1.5rem;
@@ -23,6 +23,7 @@
     }
 
     .control-icon {
+        cursor: pointer !important;
         color: $warm;
         padding: 0.3rem;
         &:hover {
@@ -43,5 +44,13 @@
         padding: 0.5rem;
         margin: 0.5rem 0rem;
         color: $dark;
+    }
+}
+
+@media (max-width: 584px) {
+    .todolist {
+        .completed {
+            margin-top: 1rem;
+        }
     }
 }

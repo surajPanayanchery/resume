@@ -6,15 +6,15 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { fromEvent, Observable, Subscription } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { fromEvent, Subject, Subscription } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
 import { DataTransferEnum } from '../enums';
 
 @Directive({
   selector: '[droppable]',
 })
 export class DroppableDirective implements OnInit, OnDestroy {
-  dragOver$: Observable<Event>;
+  dragStart$: Subject<boolean> = new Subject();
   element: HTMLDivElement;
   @Output() dropped: EventEmitter<any> = new EventEmitter();
   subscription: Subscription = new Subscription();
@@ -39,6 +39,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
         .pipe(
           tap(() => {
             this.element.style.backgroundColor = '#e8debb';
+            this.dragStart$.next(true);
           })
         )
         .subscribe()
@@ -47,18 +48,23 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
   listenDrop() {
     const drop$ = fromEvent(this.element, 'drop');
-    drop$
+    this.dragStart$
       .pipe(
-        tap((event) => {
-          this.element.style.backgroundColor = 'inherit';
-          const value = (event as DragEvent).dataTransfer.getData(
-            DataTransferEnum.TEXT
+        switchMap(() => {
+          return drop$.pipe(
+            tap((event) => {
+              this.element.style.backgroundColor = 'inherit';
+              const value = (event as DragEvent).dataTransfer.getData(
+                DataTransferEnum.TEXT
+              );
+              if (value) {
+                this.dropped.emit(value);
+              }
+            })
           );
-          if (value) {
-            this.dropped.emit(value);
-          }
         })
       )
+
       .subscribe();
   }
 
@@ -71,6 +77,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             this.element.style.backgroundColor = 'inherit';
           })
         )
+
         .subscribe()
     );
   }

@@ -1,6 +1,6 @@
 <nav-heading heading="Todo List" route="/profile"></nav-heading>
 
-<div class="todolist d-flex justify-around align-items-center">
+<div class="todolist d-flex justify-around align-items-start wrap">
   <div class="todo" droppable (dropped)="addToTodo($event)">
     <div class="todo-header d-flex align-items-center justify-between">
       <span>Todo</span>
@@ -48,7 +48,7 @@
   </div>
   <div class="completed" droppable (dropped)="addToComplete($event)">
     <div class="todo-header">Completed</div>
-    <div *ngIf="completed?.length === 0">Drop Completed items here</div>
+    <div *ngIf="completed?.length === 0">Drop Completed items here...</div>
     <div
       class="todo-item d-flex justify-between"
       draggable

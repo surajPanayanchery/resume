@@ -12,6 +12,7 @@ $darker: rgb(102, 61, 8);
     margin: 0;
     padding: 0;
     outline: none !important;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 body {
@@ -34,6 +35,9 @@ body {
     &.align-items-center {
         align-items: center;
     }
+    &.align-items-start {
+        align-items: flex-start;
+    }
     &.vertical {
         flex-direction: column;
     }
@@ -45,8 +49,8 @@ body {
     margin-left: auto !important;
 }
 
-.text-center{
-    text-align:center;
+.text-center {
+    text-align: center;
 }
 
 .scrollbar {
