@@ -26,13 +26,12 @@ fa-icon {
     }
 }
 
-@media (max-width: 353px) {
+@media (max-width: 400px) {
     .footer-container {
+        justify-content: center !important;
+
         .contact {
-            margin-left: 0rem !important;
-            .mobile {
-                text-align: center;
-            }
+            align-items: center;
         }
     }
 }
